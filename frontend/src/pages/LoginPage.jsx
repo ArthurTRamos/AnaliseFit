@@ -1,6 +1,7 @@
 import { Activity, Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import BrandLogo from '../components/BrandLogo';
 
 
 function LoginPage() {
@@ -66,14 +67,7 @@ function LoginPage() {
     return (
         <div className="min-h-screen flex items-center justify-center bg-slate-50 font-sans">
             <div className="w-full max-w-105 bg-white p-8 rounded-[20px] shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100">
-                
-                <div className="flex items-center justify-center gap-2 mb-8">
-                    <div className="bg-[#008A52] p-1.5 rounded-lg flex items-center justify-center">
-                        <Activity className="w-5 h-5 text-white" strokeWidth={2.5} />
-                    </div>
-                    <span className="text-xl text-gray-900 font-bold tracking-tight">Análise <span className="text-[#008A52]">Fit</span></span>
-                </div>
-
+                <BrandLogo></BrandLogo>
                 <h1 className="text-2xl font-bold text-gray-900 mb-1">Bem-vindo de volta</h1>
                 <p className="text-sm text-gray-500 mb-8">Faça login para acompanhar seu progresso.</p>
                 

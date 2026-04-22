@@ -29,8 +29,7 @@ function ResumeCard({id}) {
 
 
     return (
-        <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-[0_2px_12px_rgba(0,0,0,0.03)] min-w-60 font-sans">
-            
+        <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-[0_2px_12px_rgba(0,0,0,0.03)] w-full font-sans">
             <div className="flex justify-between items-center mb-3">
                 <span className="text-sm font-medium text-slate-500">
                     {getDatabyId()}

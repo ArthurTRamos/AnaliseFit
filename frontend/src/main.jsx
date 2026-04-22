@@ -6,6 +6,8 @@ import {
   createRoutesFromElements, 
   Route 
 } from 'react-router-dom'
+import { ProtectedRoute } from './components/ProtectedRoute.jsx'
+import { AuthProvider } from './contexts/AuthProvider.jsx'
 
 import App from './App.jsx'
 import DashboardPage from './pages/DashboardPage.jsx'
@@ -16,8 +18,10 @@ import './index.css'
 
 const rotas = createRoutesFromElements(
   <>
-    <Route path="/" element={<App />}>
-      <Route index element={<DashboardPage />} />
+    <Route element={<ProtectedRoute />}>
+      <Route path="/" element={<App />}>
+        <Route index element={<DashboardPage />} />
+      </Route>
     </Route>
 
     <Route path="/login" element={<Login />} />
@@ -29,6 +33,8 @@ const router = createBrowserRouter(rotas);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )
